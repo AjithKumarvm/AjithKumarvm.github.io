@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Mundu React Carousel">
-  <title>Mundu React Caraousel</title>
+  <meta name="description" content="Ajith Kumar VM">
+  <title>Ajith Kumar VM - Portfolio</title>
   <style>
     body {
       margin: 0;
@@ -14,31 +14,6 @@
       border: 0;
       font-family: sans-serif;
       background: linear-gradient(#f3f3f3, #f5f5f5);
-    }
-
-    .header {
-      width: 100%;
-      display: inline-block;
-      background: rgb(240, 240, 240);
-      box-sizing: border-box;
-      padding: 0 10px;
-      box-shadow: 0px 1px 6px 0px #cccccca6;
-      text-align: center;
-    }
-
-    .colored {
-      width: 100%;
-      text-align: center;
-      line-height: 1;
-      background: linear-gradient(#ba11c5, #ca0a6b);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .headerSubText {
-      color: #9e9b9b;
-      text-shadow: 1px 1px 0px #fff;
     }
 
     .container {
@@ -49,14 +24,67 @@
       padding: 0 10px;
       box-sizing: border-box;
     }
+
+    .card {
+      display: inline-block;
+      background-color: white;
+      box-shadow: 0px 0px 4px 6px rgb(236, 235, 235);
+      border-radius: 10px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .card .title {
+      width: 100%;
+      display: inline-block;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      text-align: center;
+      text-decoration: none;
+      color: #c10d9a;
+    }
+
+    .link{
+      text-decoration: none;
+    }
   </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF5WJF4KC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0PF5WJF4KC');
+  </script>
 </head>
 
 <body>
   <div class='container'>
-        <br />
-      <a href='./mundu-react-carousel/'>Mundu react carousel</a><br /><br /><br />
-      <a href='./radiokiller/'>RadioKiller</a>
+      <br /><br />
+    <h1>Ajith Kumar VM</h1>
+    <span>PORTFOLIO</span>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <a class='card' href='./mundu-react-carousel/' title='React Mundu Carousel'>
+      <img src='assets/carousel.png' alt='React Mundu Carousel' height='200' /><br />
+      <span class='title'>Mundu react carousel</span>
+    </a>
+    <a class='card' href='./radiokiller/' title='RadioKiller'>
+      <img src='assets/player.png' alt='RadioKiller' height='200' /><br />
+      <span class='title'>RadioKiller</span></a>
+      <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <a class='link' href='https://in.linkedin.com/in/ajithkumarvm'>LinkedIn profile</a>
   </div>
 </body>
 
