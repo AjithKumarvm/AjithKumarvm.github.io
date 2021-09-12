@@ -168,6 +168,32 @@
         "duration": 9999,
         "site": "https://radiosindia.com/radiocitydance.html",
         "id": "citydance"
+      },
+      {
+        "title": "One FM",
+        "album": "live",
+        "artist": "International",
+        "genre": "English",
+        "source": "https://22253.live.streamtheworld.com/ONE_FM_913AAC.aac?dist=sphradio-web",
+        "image": "https://radiosindia.com/images/onefm.jpg",
+        "trackNumber": 3,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/onefm.html",
+        "id": "onefm"
+      },
+      {
+        "title": "Big FM 106.2",
+        "album": "Hindi",
+        "artist": "Big FM 106.2",
+        "genre": "Hindi",
+        "source": "https://funasia.streamguys1.com/live4",
+        "image": "https://radiosindia.com/images/bigfm.jpg",
+        "trackNumber": 5,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/bigfm.html",
+        "id": "bigfm"
       }
     ]
   }
