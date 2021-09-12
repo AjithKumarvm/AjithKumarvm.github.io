@@ -116,6 +116,19 @@
         "duration": 9999,
         "site": "https://radiosindia.com/malluradio.html",
         "id": "malluradio"
+      },
+      {
+        "title": "Pallavi Radio",
+        "album": "Malayalam",
+        "artist": "Pallavi Radio",
+        "genre": "Malayalam",
+        "source": "https://pallaviradio.out.airtime.pro/pallaviradio_a",
+        "image": "https://radiosindia.com/images/pallaviradio.jpg",
+        "trackNumber": 15,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/pallaviradio.html",
+        "id": "pallaviradio"
       }
     ]
   }
