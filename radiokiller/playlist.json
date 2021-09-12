@@ -79,17 +79,17 @@
         "id": "radiokerala"
       },
       {
-        "title": "Radio Mango UAE",
+        "title": "Radio Suno 91.7",
         "album": "Malayalam",
-        "artist": "Radio Mango UAE",
+        "artist": "Radio Suno 91.7",
         "genre": "Malayalam",
         "source": "https://20133.live.streamtheworld.com/SUNO917_SC",
-        "image": "https://img.radiomango.fm/content/dam/radiomango/gallery/mainlogo.svg",
+        "image": "https://radiosindia.com/images/radiosuno.jpg",
         "trackNumber": 9,
         "totalTrackCount": 1,
         "duration": 9999,
-        "site": "https://www.radiomango.fm/home.html/",
-        "id": "radiomango"
+        "site": "https://radiosindia.com/radiosunomalayalam.html",
+        "id": "radiosuno"
       },
       {
         "title": "Radio City Tamil",
@@ -103,6 +103,19 @@
         "duration": 9999,
         "site": "https://radiosindia.com/radiocitytamil.html",
         "id": "radiocitytamil"
+      },
+      {
+        "title": "Mallu Radio",
+        "album": "Malayalam",
+        "artist": "Mallu Radio",
+        "genre": "Malayalam",
+        "source": "https://s6.streamworld.co.uk/radio/8000/radio.mp3",
+        "image": "https://radiosindia.com/images/malluradio.jpg",
+        "trackNumber": 15,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/malluradio.html",
+        "id": "malluradio"
       }
     ]
   }
