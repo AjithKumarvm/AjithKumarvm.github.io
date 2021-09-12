@@ -129,6 +129,19 @@
         "duration": 9999,
         "site": "https://radiosindia.com/pallaviradio.html",
         "id": "pallaviradio"
+      },
+        {
+        "title": "Radio Talky",
+        "album": "Tamil",
+        "artist": "Radio Talky",
+        "genre": "Tamil",
+        "source": "https://fps1.listen2myradio.com:2199/listen.php?ip=95.154.228.120&port=8048&type=s1",
+        "image": "https://radiosindia.com/images/radiotalky.jpg",
+        "trackNumber": 15,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/radiotalky.html",
+        "id": "radiotalky"
       }
     ]
   }
