@@ -194,6 +194,19 @@
         "duration": 9999,
         "site": "https://radiosindia.com/bigfm.html",
         "id": "bigfm"
+      },
+      {
+        "title": "Radio Caravan",
+        "album": "Hindi",
+        "artist": "Radio Caravan",
+        "genre": "Hindi",
+        "source": "https://stream.voxx.pro/radio/8260/radio.mp3",
+        "image": "https://radiosindia.com/images/radiocaravan.jpg",
+        "trackNumber": 5,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/radiocaravan.html",
+        "id": "radiocaravan"
       }
     ]
   }
