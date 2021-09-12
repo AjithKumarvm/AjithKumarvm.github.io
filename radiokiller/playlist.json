@@ -142,6 +142,32 @@
         "duration": 9999,
         "site": "https://radiosindia.com/radiotalky.html",
         "id": "radiotalky"
+      },
+      {
+        "title": "Virgin Radio Dubai",
+        "album": "live",
+        "artist": "International",
+        "genre": "English",
+        "source": "https://stream.zeno.fm/agtp9c146qzuv",
+        "image": "https://radiosindia.com/images/virginradiodubai.jpg",
+        "trackNumber": 3,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/virginradiodubai.html",
+        "id": "virginradio"
+      },
+      {
+        "title": "Radio city dance",
+        "album": "live",
+        "artist": "International",
+        "genre": "English",
+        "source": "https://prclive4.listenon.in/Dance",
+        "image": "https://radiosindia.com/images/radiocitydance.jpg",
+        "trackNumber": 3,
+        "totalTrackCount": 1,
+        "duration": 9999,
+        "site": "https://radiosindia.com/radiocitydance.html",
+        "id": "citydance"
       }
     ]
   }
