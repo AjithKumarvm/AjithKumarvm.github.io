@@ -3,7 +3,7 @@
       {
         "title": "Hello Radio 90.8",
         "album": "Malayalam",
-        "artist": "Kidney federation of India",
+        "artist": "Trissur, India",
         "genre": "Malayalam",
         "source": "http://148.72.210.73:8000/helloradio.ogg",
         "image": "http://www.kidneyvoice.com/wp-content/uploads/2019/07/small-logo.png",
@@ -16,7 +16,7 @@
       {
         "title": "WHTZ-FM - Z100",
         "album": "live",
-        "artist": "International",
+        "artist": "New York",
         "genre": "English",
         "source": "https://stream.revma.ihrhls.com/zc1469",
         "image": "https://upload.wikimedia.org/wikipedia/en/e/e2/WHTZ_logo.png",
@@ -29,7 +29,7 @@
       {
         "title": "Shakti FM",
         "album": "Tamil",
-        "artist": "Shakti",
+        "artist": "Colombo, Sri Lanka",
         "genre": "Tamil",
         "source": "http://live.trusl.com:1160/;?type=http&nocache=0",
         "image": "https://cdn.webrad.io/images/logos/onlineradios-in/shakti.png",
@@ -42,7 +42,7 @@
       {
         "title": "Radio Mirchi 98.3",
         "album": "Hindi",
-        "artist": "Radio Mirchi",
+        "artist": "Delhi, Indore, Mumbai",
         "genre": "Hindi",
         "source": "http://peridot.streamguys.com:7150/Mirchi",
         "image": "https://cdn.webrad.io/images/logos/onlineradios-in/mirchi-fm.png",
@@ -55,7 +55,7 @@
       {
         "title": "Club FM UAE",
         "album": "Malayalam",
-        "artist": "Club FM",
+        "artist": "UAE",
         "genre": "Malayalam",
         "source": "https://eu10.fastcast4u.com/clubfmuae",
         "image": "https://radiosindia.com/images/clubfm.jpg",
@@ -68,7 +68,7 @@
       {
         "title": "Radio Kerala",
         "album": "Malayalam",
-        "artist": "Radio Kerala",
+        "artist": "Kerala",
         "genre": "Malayalam",
         "source": "http://103.133.180.223:8000/airtime_128",
         "image": "https://www.radio.kerala.gov.in/img/radio-prdplogo-transparent.png",
@@ -81,7 +81,7 @@
       {
         "title": "Radio Suno 91.7",
         "album": "Malayalam",
-        "artist": "Radio Suno 91.7",
+        "artist": "Qatar",
         "genre": "Malayalam",
         "source": "https://20133.live.streamtheworld.com/SUNO917_SC",
         "image": "https://radiosindia.com/images/radiosuno.jpg",
@@ -94,7 +94,7 @@
       {
         "title": "Radio City Tamil",
         "album": "Tamil",
-        "artist": "Radio City Tamil",
+        "artist": "Tamil nadu",
         "genre": "Tamil",
         "source": "https://prclive4.listenon.in/Tamil",
         "image": "https://radiosindia.com/images/radiocity.jpg",
@@ -107,7 +107,7 @@
       {
         "title": "Mallu Radio",
         "album": "Malayalam",
-        "artist": "Mallu Radio",
+        "artist": "Kerala",
         "genre": "Malayalam",
         "source": "https://s6.streamworld.co.uk/radio/8000/radio.mp3",
         "image": "https://radiosindia.com/images/malluradio.jpg",
@@ -120,7 +120,7 @@
       {
         "title": "Pallavi Radio",
         "album": "Malayalam",
-        "artist": "Pallavi Radio",
+        "artist": "Kerala",
         "genre": "Malayalam",
         "source": "https://pallaviradio.out.airtime.pro/pallaviradio_a",
         "image": "https://radiosindia.com/images/pallaviradio.jpg",
@@ -133,7 +133,7 @@
         {
         "title": "Radio Talky",
         "album": "Tamil",
-        "artist": "Radio Talky",
+        "artist": "Vellayani, Thiruvananthapuram",
         "genre": "Tamil",
         "source": "https://fps1.listen2myradio.com:2199/listen.php?ip=95.154.228.120&port=8048&type=s1",
         "image": "https://radiosindia.com/images/radiotalky.jpg",
@@ -144,22 +144,9 @@
         "id": "radiotalky"
       },
       {
-        "title": "Virgin Radio Dubai",
-        "album": "live",
-        "artist": "International",
-        "genre": "English",
-        "source": "https://stream.zeno.fm/agtp9c146qzuv",
-        "image": "https://radiosindia.com/images/virginradiodubai.jpg",
-        "trackNumber": 3,
-        "totalTrackCount": 1,
-        "duration": 9999,
-        "site": "https://radiosindia.com/virginradiodubai.html",
-        "id": "virginradio"
-      },
-      {
         "title": "Radio city dance",
         "album": "live",
-        "artist": "International",
+        "artist": "Mumbai, India",
         "genre": "English",
         "source": "https://prclive4.listenon.in/Dance",
         "image": "https://radiosindia.com/images/radiocitydance.jpg",
@@ -172,7 +159,7 @@
       {
         "title": "One FM",
         "album": "live",
-        "artist": "International",
+        "artist": "Singapore",
         "genre": "English",
         "source": "https://22253.live.streamtheworld.com/ONE_FM_913AAC.aac?dist=sphradio-web",
         "image": "https://radiosindia.com/images/onefm.jpg",
@@ -185,7 +172,7 @@
       {
         "title": "Big FM 106.2",
         "album": "Hindi",
-        "artist": "Big FM 106.2",
+        "artist": "South Asia",
         "genre": "Hindi",
         "source": "https://funasia.streamguys1.com/live4",
         "image": "https://radiosindia.com/images/bigfm.jpg",
@@ -198,7 +185,7 @@
       {
         "title": "Radio Caravan",
         "album": "Hindi",
-        "artist": "Radio Caravan",
+        "artist": "South Asia",
         "genre": "Hindi",
         "source": "https://stream.voxx.pro/radio/8260/radio.mp3",
         "image": "https://radiosindia.com/images/radiocaravan.jpg",
