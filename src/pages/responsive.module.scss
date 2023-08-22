@@ -1,0 +1,30 @@
+$small-mobile-width: 360px;
+$mobile-width: 980px; // mobile switching pixel
+$desktop-width: 1441px;
+
+// ----------------------------------------------------------------------
+
+// Mobile Media Query
+
+// ----------------------------------------------------------------------
+
+// example: @include mobile {font-size: 18px;}
+
+@mixin small {
+  // this should always come after @include mobile()
+  @media (max-width: $small-mobile-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}

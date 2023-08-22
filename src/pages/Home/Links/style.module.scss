@@ -1,7 +1,21 @@
+@import './../../responsive.module.scss';
+
+
 .links{
-  margin-top: 96px;
+  display: flex;
+  flex: 1;
+  align-self: flex-start;
+  margin-top: 20px;
   display: flex;
   z-index: 10;
+  flex-direction: row;
+  @include small{
+    flex-direction: column;
+    align-self: center;
+  }
+  @include mobile{
+    align-self: center;
+  }
   .iconHolder{
     display: flex;
     align-items: center;
@@ -17,6 +31,13 @@
       transition-duration: 500ms;
       border: 1px solid #f2f1f1;
       background-color: #ffffff7e;
+    }
+    @include mobile{
+      margin-right: 12px;
+    }
+    @include small{
+      margin-right: 0px;
+      margin-bottom: 12px;
     }
   }
   .buttonLink{

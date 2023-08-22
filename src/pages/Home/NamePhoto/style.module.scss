@@ -1,136 +1,179 @@
+@import './../../responsive.module.scss';
+
 .namePhotoWrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   z-index: 10;
   padding: 70px 50px;
   border-radius: 50px;
-  .textSection{
-    display: flex;
-    flex-direction: column;
-    margin-right: 120px;
-    user-select: none;
-      
-    .firstName{
-      display: flex;
-      color: #7777774a;
-      text-shadow: 0px 1px 0px #ffffff;
-      font-weight: 800;
-      animation: blinker 3s 3s linear infinite;
-      @keyframes blinker {
-        10% {
-          color: #0022ff5e;
-        }
-        11% {
-          color: #7777774a;
-        }
-        19% {
-          color: #0022ff5e;
-        }
-        20% {
-          color: #7777774a;
-        }
-      }
-      &:hover{
-        color: #0022ff5e;
-        // transition-duration: 500ms;
-      }
-      .first{
-        display: flex;
-        font-size: 64px;
-        line-height: 70px;
-      }
-      .rest{
-        display: flex;
-        font-size: 52px;
-      }
-    }
-    .lastName{
-      display: flex;
-      font-weight: 800;
-      color: #7777774a;
-      text-shadow: 0px 1px 0px #ffffff;
-      animation: blinker 3s 4s linear infinite;
-      @keyframes blinker {
-        10% {
-          color: #0022ff5e;
-        }
-        11% {
-          color: #7777774a;
-        }
-        19% {
-          color: #0022ff5e;
-        }
-        20% {
-          color: #7777774a;
-        }
-        24% {
-          color: #0022ff5e;
-        }
-        25% {
-          color: #7777774a;
-        }
-      }
-      &:hover{
-        color: #0022ff5e;
-      }
-      .first{
-        display: flex;
-        font-size: 128px;
-        line-height: 120px;
-      }
-      .rest{
-        display: flex;
-        font-size: 96px;
-      }
-    }
-    .role{
-      display: flex;
-      margin-top: 18px;
-      margin-bottom: 18px;
-      align-items: center;
-      .iconHolder{
-        display: flex;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        border-top: 1px solid #ddd;
-        .icon{
-          display: flex;
-        }
-      }
-      .text{
-        display: flex;
-        color: #62a7ed;
-        font-size: 14px;
-        font-weight: 600;
-        margin-left: 12px;
-      }
-    }
-    .pitch{
-      max-width: 500px;
-      padding-left: 22px;
-      color: #878787;
-      border-left: 8px solid #c0bebe;
-      .highlight{
-        color: #ce2828c5;
-        font-weight: 800;
-      }
-    }
+  @include mobile{
+    padding: 20px;
+    margin: 10px;
   }
-  .dpWrapper{
-    width: 259px;
-    height: 259px;
+  .textDpSection {
     display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    border-top: 1px solid #ddd;
-    .dpImage{
+    flex-direction: row;
+    @include mobile{
+      flex-direction: column-reverse;
+    }
+    .textSection{
       display: flex;
+      flex-direction: column;
+      margin-right: 120px;
+      user-select: none;
+      @include mobile{
+        align-items: center;
+        margin-right: 0px;
+      }
+      
+      .firstName{
+        display: flex;
+        color: #7777774a;
+        text-shadow: 0px 1px 0px #ffffff;
+        font-weight: 800;
+        animation: blinker 3s 3s linear;
+        @keyframes blinker {
+          10% {
+            color: #0022ff5e;
+          }
+          11% {
+            color: #7777774a;
+          }
+          19% {
+            color: #0022ff5e;
+          }
+          20% {
+            color: #7777774a;
+          }
+        }
+        &:hover{
+          color: #0022ff5e;
+          // transition-duration: 500ms;
+        }
+        .first{
+          display: flex;
+          font-size: 64px;
+          line-height: 70px;
+          @include mobile{
+            font-size: 40px;
+            line-height: 36px;
+          }
+        }
+        .rest{
+          display: flex;
+          font-size: 52px;
+          @include mobile{
+            font-size: 30px;
+          }
+        }
+      }
+      .lastName{
+        display: flex;
+        font-weight: 800;
+        color: #7777774a;
+        text-shadow: 0px 1px 0px #ffffff;
+        animation: blinker 3s 4s linear;
+        @keyframes blinker {
+          10% {
+            color: #0022ff5e;
+          }
+          11% {
+            color: #7777774a;
+          }
+          19% {
+            color: #0022ff5e;
+          }
+          20% {
+            color: #7777774a;
+          }
+          24% {
+            color: #0022ff5e;
+          }
+          25% {
+            color: #7777774a;
+          }
+        }
+        &:hover{
+          color: #0022ff5e;
+        }
+        .first{
+          display: flex;
+          font-size: 128px;
+          line-height: 120px;
+          @include mobile{
+            font-size: 48px;
+            line-height: 45px;
+          }
+        }
+        .rest{
+          display: flex;
+          font-size: 96px;
+          @include mobile{
+            font-size: 36px;
+          }
+        }
+      }
+      .role{
+        display: flex;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        align-items: center;
+        .iconHolder{
+          display: flex;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          align-items: center;
+          justify-content: center;
+          border-top: 1px solid #ddd;
+          .icon{
+            display: flex;
+          }
+        }
+        .text{
+          display: flex;
+          color: #62a7ed;
+          font-size: 14px;
+          font-weight: 600;
+          margin-left: 12px;
+        }
+      }
+      .pitch{
+        max-width: 500px;
+        padding-left: 22px;
+        color: #878787;
+        border-left: 8px solid #c0bebe;
+        .highlight{
+          color: #ce2828c5;
+          font-weight: 800;
+        }
+      }
+    }
+    .dpWrapper{
+      width: 259px;
+      height: 259px;
+      display: flex;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      border-top: 1px solid #ddd;
+      @include mobile{
+        width: 100%;
+        flex: 1;
+        border-top: 1px solid transparent;
+        margin-bottom: 20px;
+      }
+      .dpImage{
+        display: flex;
+        .img{
+          height: 210px;
+          @include mobile{
+            height: 120px;
+          }
+        }
+      }
     }
   }
 }
