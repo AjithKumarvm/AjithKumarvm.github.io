@@ -1,0 +1,33 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #AFAFAF;
+  background-color: #d3d3d3;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body, .root  {
+  margin: 0;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+}
+body *div {
+  box-sizing: border-box;
+}
+
+.glass{
+  backdrop-filter: blur(3px);
+  border: 1px solid #e3e3e3;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #ddd;
+}
