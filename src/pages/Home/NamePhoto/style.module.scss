@@ -32,21 +32,7 @@
         color: #7777774a;
         text-shadow: 0px 1px 0px #ffffff;
         font-weight: 800;
-        animation: blinker 3s 3s linear;
-        @keyframes blinker {
-          10% {
-            color: #0022ff5e;
-          }
-          11% {
-            color: #7777774a;
-          }
-          19% {
-            color: #0022ff5e;
-          }
-          20% {
-            color: #7777774a;
-          }
-        }
+        animation: blinker 6s linear infinite;
         &:hover{
           color: #0022ff5e;
           // transition-duration: 500ms;
@@ -73,27 +59,7 @@
         font-weight: 800;
         color: #7777774a;
         text-shadow: 0px 1px 0px #ffffff;
-        animation: blinker 3s 4s linear;
-        @keyframes blinker {
-          10% {
-            color: #0022ff5e;
-          }
-          11% {
-            color: #7777774a;
-          }
-          19% {
-            color: #0022ff5e;
-          }
-          20% {
-            color: #7777774a;
-          }
-          24% {
-            color: #0022ff5e;
-          }
-          25% {
-            color: #7777774a;
-          }
-        }
+        animation: blinker 6s 3s linear infinite;
         &:hover{
           color: #0022ff5e;
         }
@@ -175,5 +141,23 @@
         }
       }
     }
+  }
+}
+
+@keyframes blinker {
+  0% {
+    color: #7777774a;
+  }
+  25%{
+    color: #7777774a;
+  }
+  50% {
+    color: #0022ff5e;
+  }
+  75%{
+    color: #7777774a;
+  }
+  100% {
+    color: #7777774a;
   }
 }

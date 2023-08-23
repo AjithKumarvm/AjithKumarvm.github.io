@@ -24,7 +24,7 @@ const NamePhoto = () => <div className={styles.namePhotoWrapper + ' glass'}>
         </div>
       </div>
       <p className={styles.pitch}>
-        With 8+ years of experience in Frontend, I can transform your figma designs to a fully fledged <span className={styles.highlight}>ReactJs</span> web-app while adhering to your brand UI guidelines and enforce the same to a team of 3 to 4 members.
+        With 8+ years of experience in Frontend, I can transform your design visions to a fully fledged <span className={styles.highlight}>ReactJs</span> web-app while adhering to your brand UI guidelines and enforce the same to a team of 3 to 4 members.
       </p>
     </div>
     <div className={styles.dpWrapper + ' glass-invert'}>
