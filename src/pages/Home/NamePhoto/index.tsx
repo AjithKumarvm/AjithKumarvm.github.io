@@ -20,11 +20,11 @@ const NamePhoto = () => <div className={styles.namePhotoWrapper + ' glass'}>
           <img className={styles.icon} src={safety} height={23} />
         </div>
         <div className={styles.text}>
-          FRONTEND ARCHITECT
+          FRONTEND LEAD/ARCHITECT
         </div>
       </div>
       <p className={styles.pitch}>
-        With 8+ years of experience in Frontend, I can transform your design visions to a fully fledged <span className={styles.highlight}>ReactJs</span> web-app while adhering to your brand UI guidelines and enforce the same to a team of 3 to 4 members.
+        An adept frontend-focused developer with extensive experience thriving in the dynamic realm of startups. I've excelled by collaborating closely with co-founders, deeply comprehending their vision, and cohesively crafting fast-paced, dynamic products.
       </p>
     </div>
     <div className={styles.dpWrapper + ' glass-invert'}>

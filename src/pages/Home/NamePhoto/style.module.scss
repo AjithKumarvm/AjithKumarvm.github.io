@@ -29,14 +29,8 @@
       
       .firstName{
         display: flex;
-        color: #7777774a;
-        text-shadow: 0px 1px 0px #ffffff;
+        color: #0022ff5e;
         font-weight: 800;
-        animation: blinker 6s linear infinite;
-        &:hover{
-          color: #0022ff5e;
-          // transition-duration: 500ms;
-        }
         .first{
           display: flex;
           font-size: 64px;
@@ -57,12 +51,7 @@
       .lastName{
         display: flex;
         font-weight: 800;
-        color: #7777774a;
-        text-shadow: 0px 1px 0px #ffffff;
-        animation: blinker 6s 3s linear infinite;
-        &:hover{
-          color: #0022ff5e;
-        }
+        color: #000f7453;
         .first{
           display: flex;
           font-size: 128px;
@@ -141,23 +130,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes blinker {
-  0% {
-    color: #7777774a;
-  }
-  25%{
-    color: #7777774a;
-  }
-  50% {
-    color: #0022ff5e;
-  }
-  75%{
-    color: #7777774a;
-  }
-  100% {
-    color: #7777774a;
   }
 }
