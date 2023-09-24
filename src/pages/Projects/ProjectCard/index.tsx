@@ -26,6 +26,6 @@ export const ProjectCard = ({
     <div className={styles.name}>{name}</div>
     <div className={styles.desc}>{desc}</div>
     <div className={styles.links}>
-      {links.map(({ name, link, icon }) => <a href='#' key={link} title={name}><img src={icon} height={32} /></a>)}
+      {links.map(({ name, link, icon }) => <a href={link} target='_blank' key={link} title={name}><img src={icon} height={32} /></a>)}
     </div>
   </div>
