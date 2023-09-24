@@ -9,5 +9,6 @@
   align-items: center;
   @include mobile{
     justify-content: flex-start;
+    min-height: unset;
   }
 }
