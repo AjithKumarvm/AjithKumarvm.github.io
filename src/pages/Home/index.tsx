@@ -1,13 +1,13 @@
 
 import NamePhoto from './NamePhoto'
 import styles from './style.module.scss'
+import VideoBg from './VideoBg'
 
-import ParticlesBg from './ParticlesBg';
 
 const Home = () => {
   return <div className={styles.wrapper}>
     <NamePhoto />
-    <ParticlesBg />
+    <VideoBg src="/hero.mp4" />
   </div>
 }
 

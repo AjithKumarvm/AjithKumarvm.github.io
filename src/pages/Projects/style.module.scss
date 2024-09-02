@@ -10,6 +10,7 @@
   padding-bottom: 100px;
   z-index: 11;
   align-items: center;
+  position: relative;
   @include mobile{
     min-height: auto;
   }
@@ -22,6 +23,7 @@
     max-height: 70px;
     justify-content: center;
     margin-top: 100px;
+    z-index: 1;
   }
   .cardWrapper{
     display: flex;

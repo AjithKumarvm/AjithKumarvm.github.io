@@ -26,8 +26,9 @@ body div {
 }
 
 .glass{
-  backdrop-filter: blur(3px);
-  border: 1px solid #e3e3e3;
-  border-top: 1px solid #efefef;
-  border-bottom: 1px solid #ddd;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-top: 1px solid #efefef96;
+  border-bottom: 1px solid #dddddd14;
 }
