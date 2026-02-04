@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Investment Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gold Investment Tracker</h1>
+            <p class="subtitle">Track your 22K gold investment - Kerala Rates</p>
+        </header>
+
+        <!-- Gold Coin Loader -->
+        <div class="coin-loader" id="coin-loader">
+            <div class="coin">
+                <div class="coin-edge"></div>
+                <div class="coin-face coin-front"></div>
+                <div class="coin-face coin-back"></div>
+            </div>
+        </div>
+
+        <section class="investment-details">
+            <h2>Investment Details</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <span class="label">Purchase Date</span>
+                    <span class="value">31 Jan 2026</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Gold Purity</span>
+                    <span class="value">22 Karat</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Weight</span>
+                    <span class="value">176.630 grams</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Purchase Price</span>
+                    <span class="value" id="purchase-price"><span class="mini-coin"></span></span>
+                </div>
+            </div>
+            <div class="buyback-info">
+                <span class="buyback-label">Buyback Window</span>
+                <span class="buyback-dates">30 Nov 2026 — 14 Jan 2027</span>
+                <span class="buyback-countdown" id="buyback-countdown"></span>
+            </div>
+        </section>
+
+        <section class="current-rate">
+            <h2>Kerala 22K Gold Rate (916 Hallmark)</h2>
+            <div class="rate-display">
+                <div class="rate-card primary">
+                    <span class="rate-label">Per Gram (22K)</span>
+                    <span class="rate-value" id="current-rate-gram"><span class="mini-coin"></span></span>
+                    <span class="rate-currency">INR</span>
+                </div>
+                <div class="rate-card">
+                    <span class="rate-label">Per 10 Grams (22K)</span>
+                    <span class="rate-value" id="current-rate-10gram"><span class="mini-coin"></span></span>
+                    <span class="rate-currency">INR</span>
+                </div>
+                <div class="rate-card">
+                    <span class="rate-label">Per Pavan (8g)</span>
+                    <span class="rate-value" id="current-rate-oz"><span class="mini-coin"></span></span>
+                    <span class="rate-currency">INR</span>
+                </div>
+            </div>
+            <p class="last-updated">Last updated: <span id="last-updated">--</span></p>
+        </section>
+
+        <section class="portfolio-value">
+            <h2>Portfolio Summary</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card invested">
+                    <span class="portfolio-label">Invested</span>
+                    <span class="portfolio-amount" id="invested-value"><span class="mini-coin"></span></span>
+                </div>
+                <div class="portfolio-card gst">
+                    <span class="portfolio-label">GST Pending (3%)</span>
+                    <span class="portfolio-amount" id="gst-pending"><span class="mini-coin"></span></span>
+                    <span class="gst-note">On purchase value</span>
+                </div>
+                <div class="portfolio-card current">
+                    <span class="portfolio-label">Current Value</span>
+                    <span class="portfolio-amount" id="current-value"><span class="mini-coin"></span></span>
+                </div>
+                <div class="portfolio-card profit">
+                    <span class="portfolio-label">Net Profit / Loss</span>
+                    <span class="portfolio-amount" id="profit-value"><span class="mini-coin"></span></span>
+                    <span class="portfolio-percent" id="profit-percent"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="growth-analysis">
+            <h2>Investment Growth</h2>
+            <div class="growth-grid">
+                <div class="growth-card">
+                    <span class="period">Daily</span>
+                    <span class="growth-value" id="daily-growth"><span class="mini-coin"></span></span>
+                    <span class="growth-percent" id="daily-percent"></span>
+                </div>
+                <div class="growth-card">
+                    <span class="period">Weekly</span>
+                    <span class="growth-value" id="weekly-growth"><span class="mini-coin"></span></span>
+                    <span class="growth-percent" id="weekly-percent"></span>
+                </div>
+                <div class="growth-card">
+                    <span class="period">Monthly</span>
+                    <span class="growth-value" id="monthly-growth"><span class="mini-coin"></span></span>
+                    <span class="growth-percent" id="monthly-percent"></span>
+                </div>
+                <div class="growth-card">
+                    <span class="period">Yearly</span>
+                    <span class="growth-value" id="yearly-growth"><span class="mini-coin"></span></span>
+                    <span class="growth-percent" id="yearly-percent"></span>
+                </div>
+                <div class="growth-card highlight">
+                    <span class="period">Total (Since Purchase)</span>
+                    <span class="growth-value" id="total-growth"><span class="mini-coin"></span></span>
+                    <span class="growth-percent" id="total-percent"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="price-history">
+            <h2>Price History Chart</h2>
+            <div class="chart-container">
+                <canvas id="priceChart"></canvas>
+            </div>
+            <div class="chart-controls">
+                <button class="active" data-period="7">7 Days</button>
+                <button data-period="30">30 Days</button>
+                <button data-period="90">3 Months</button>
+                <button data-period="365">1 Year</button>
+            </div>
+        </section>
+
+        <section class="api-settings">
+            <h2>Data Source</h2>
+            <p class="api-note">Gold rates sourced from Kerala jewellery market. Rates exclude GST (3%) and making charges.</p>
+            <div class="api-input-group">
+                <button id="save-api-key">Refresh Rates</button>
+            </div>
+            <p class="api-hint">Reference: <a href="https://www.goodreturns.in/gold-rates/kerala.html" target="_blank">GoodReturns Kerala Gold Rate</a> | <a href="https://www.keralagold.com" target="_blank">KeralaGold.com</a></p>
+        </section>
+
+        <footer>
+            <p>Data based on Kerala Gold & Silver Dealers Association rates</p>
+            <p class="disclaimer">Prices are indicative and exclude GST (3%) and making charges. Actual rates may vary by jeweller.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

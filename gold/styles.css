@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #8B7CF7;
+    --primary-light: #A5A0F7;
+    --primary-bg: rgba(139, 124, 247, 0.1);
+    --bg-main: #0F0F0F;
+    --bg-card: #1A1A1A;
+    --bg-elevated: #242424;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --text-muted: #666666;
+    --border: #2A2A2A;
+    --success: #34D399;
+    --success-bg: rgba(52, 211, 153, 0.15);
+    --danger: #F87171;
+    --danger-bg: rgba(248, 113, 113, 0.15);
+    --gold: #F59E0B;
+    --gold-light: #FBBF24;
+    --gold-bg: rgba(245, 158, 11, 0.15);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --radius: 12px;
+    --radius-lg: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+section {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+section h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section h2::before {
+    content: '';
+    width: 3px;
+    height: 16px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+/* Investment Details */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+}
+
+.detail-card {
+    background: var(--bg-elevated);
+    padding: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail-card .label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.detail-card .value {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Buyback Info */
+.buyback-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--bg-elevated) 100%);
+    border-radius: var(--radius);
+    border: 1px solid rgba(139, 124, 247, 0.3);
+    text-align: center;
+}
+
+.buyback-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.buyback-dates {
+    display: block;
+    color: var(--primary-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.buyback-countdown {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.buyback-countdown.active {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.buyback-countdown.urgent {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+/* Current Rate */
+.rate-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+
+.rate-card {
+    background: var(--bg-elevated);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rate-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.rate-card.primary {
+    background: var(--gold-bg);
+    border: 1px solid var(--gold);
+}
+
+.rate-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.rate-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.rate-card.primary .rate-value {
+    color: var(--gold-light);
+}
+
+.rate-currency {
+    display: none;
+}
+
+.last-updated {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+/* Portfolio Value */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.portfolio-card {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius);
+    background: var(--bg-elevated);
+}
+
+.portfolio-card.invested {
+    background: var(--bg-elevated);
+}
+
+.portfolio-card.current {
+    background: linear-gradient(135deg, var(--gold-bg) 0%, var(--bg-elevated) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.portfolio-card.gst {
+    background: linear-gradient(135deg, var(--danger-bg) 0%, var(--bg-elevated) 100%);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.portfolio-card.gst .portfolio-amount {
+    color: var(--danger);
+}
+
+.gst-note {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.portfolio-card.profit {
+    background: linear-gradient(135deg, var(--success-bg) 0%, var(--bg-elevated) 100%);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.portfolio-card.profit.negative {
+    background: linear-gradient(135deg, var(--danger-bg) 0%, var(--bg-elevated) 100%);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.portfolio-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-amount {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+}
+
+.portfolio-card.current .portfolio-amount {
+    color: var(--gold-light);
+}
+
+.portfolio-card.profit .portfolio-amount {
+    color: var(--success);
+}
+
+.portfolio-card.profit.negative .portfolio-amount {
+    color: var(--danger);
+}
+
+.portfolio-percent {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.portfolio-card.profit.negative .portfolio-percent {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+@media (max-width: 640px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Growth Analysis */
+.growth-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+
+.growth-card {
+    background: var(--bg-elevated);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.growth-card.highlight {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--bg-card) 100%);
+    border: 1px solid rgba(139, 124, 247, 0.3);
+}
+
+.growth-card .period {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.growth-card .growth-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.growth-card .growth-percent {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.125rem 0.5rem;
+    border-radius: 4px;
+}
+
+.growth-card .growth-percent.positive {
+    color: var(--success);
+    background: var(--success-bg);
+}
+
+.growth-card .growth-percent.negative {
+    color: var(--danger);
+    background: var(--danger-bg);
+}
+
+/* Chart */
+.chart-container {
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    height: 280px;
+}
+
+.chart-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.chart-controls button {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.chart-controls button:hover {
+    background: var(--primary-bg);
+    border-color: var(--primary);
+    color: var(--primary-light);
+}
+
+.chart-controls button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Data Source Section */
+.api-settings {
+    background: var(--bg-card);
+    border: 1px dashed var(--border);
+}
+
+.api-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.api-input-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.api-input-group button {
+    padding: 0.625rem 1.5rem;
+    background: var(--gold);
+    border: none;
+    border-radius: var(--radius);
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.api-input-group button:hover {
+    background: var(--gold-light);
+}
+
+.api-input-group button:active {
+    transform: scale(0.98);
+}
+
+.api-hint {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.api-hint a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.api-hint a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.disclaimer {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.3;
+}
+
+/* Gold Coin Spinner */
+.coin-loader {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.coin-loader.active {
+    display: flex;
+}
+
+.coin {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: flip 1.2s ease-in-out infinite;
+}
+
+.coin-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,0.2),
+        0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.coin-front {
+    background: linear-gradient(145deg, #FFD700, #FFA500, #DAA520);
+    border: 3px solid #B8860B;
+}
+
+.coin-back {
+    background: linear-gradient(145deg, #DAA520, #FFA500, #FFD700);
+    border: 3px solid #B8860B;
+    transform: rotateY(180deg);
+}
+
+.coin-front::after,
+.coin-back::after {
+    content: '₹';
+    color: #8B6914;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+}
+
+.coin-edge {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #B8860B, #DAA520, #B8860B);
+    transform: translateZ(-3px);
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Mini coin for inline loading */
+.mini-coin {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(145deg, #FFD700, #DAA520);
+    border-radius: 50%;
+    border: 2px solid #B8860B;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+@keyframes spin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .current-value .amount {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+
+    .growth-card.highlight {
+        grid-column: auto;
+    }
+
+    .details-grid,
+    .rate-display,
+    .growth-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Error State */
+.error {
+    color: var(--danger);
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: var(--danger-bg);
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
