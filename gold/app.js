@@ -269,6 +269,10 @@ function updateProfit() {
 function calculateGrowth() {
     if (!currentPrice) return;
 
+    const today = new Date();
+    const purchaseDate = INVESTMENT.purchaseDate;
+    const daysSincePurchase = Math.floor((today - purchaseDate) / (1000 * 60 * 60 * 24));
+
     const currentValue = currentPrice * INVESTMENT.weight;
     const investedValue = INVESTMENT.purchaseAmount;
     const pendingGST = investedValue * INVESTMENT.gstRate;
@@ -278,52 +282,83 @@ function calculateGrowth() {
     const totalPercent = ((totalGrowth) / investedValue) * 100;
     updateGrowthCard('total', totalGrowth, totalPercent);
 
-    // Daily growth (vs yesterday) - pure gold value change
-    const yesterdayData = historicalData.find(d => d.label === 'yesterday');
-    if (yesterdayData) {
-        const yesterdayValue = yesterdayData.price * INVESTMENT.weight;
-        const dailyGrowth = currentValue - yesterdayValue;
-        const dailyPercent = (dailyGrowth / yesterdayValue) * 100;
-        updateGrowthCard('daily', dailyGrowth, dailyPercent);
+    // Daily growth (vs yesterday) - only if at least 1 day since purchase
+    if (daysSincePurchase >= 1) {
+        const yesterdayData = historicalData.find(d => d.label === 'yesterday');
+        if (yesterdayData) {
+            const yesterdayValue = yesterdayData.price * INVESTMENT.weight;
+            const dailyGrowth = currentValue - yesterdayValue;
+            const dailyPercent = (dailyGrowth / yesterdayValue) * 100;
+            updateGrowthCard('daily', dailyGrowth, dailyPercent);
+        }
+    } else {
+        hideGrowthCard('daily');
     }
 
-    // Weekly growth
-    const weekData = historicalData.find(d => d.label === 'lastWeek');
-    if (weekData) {
-        const weekValue = weekData.price * INVESTMENT.weight;
-        const weeklyGrowth = currentValue - weekValue;
-        const weeklyPercent = (weeklyGrowth / weekValue) * 100;
-        updateGrowthCard('weekly', weeklyGrowth, weeklyPercent);
+    // Weekly growth - only if at least 7 days since purchase
+    if (daysSincePurchase >= 7) {
+        const weekData = historicalData.find(d => d.label === 'lastWeek');
+        if (weekData) {
+            const weekValue = weekData.price * INVESTMENT.weight;
+            const weeklyGrowth = currentValue - weekValue;
+            const weeklyPercent = (weeklyGrowth / weekValue) * 100;
+            updateGrowthCard('weekly', weeklyGrowth, weeklyPercent);
+        }
+    } else {
+        hideGrowthCard('weekly', 7 - daysSincePurchase);
     }
 
-    // Monthly growth
-    const monthData = historicalData.find(d => d.label === 'lastMonth');
-    if (monthData) {
-        const monthValue = monthData.price * INVESTMENT.weight;
-        const monthlyGrowth = currentValue - monthValue;
-        const monthlyPercent = (monthlyGrowth / monthValue) * 100;
-        updateGrowthCard('monthly', monthlyGrowth, monthlyPercent);
+    // Monthly growth - only if at least 30 days since purchase
+    if (daysSincePurchase >= 30) {
+        const monthData = historicalData.find(d => d.label === 'lastMonth');
+        if (monthData) {
+            const monthValue = monthData.price * INVESTMENT.weight;
+            const monthlyGrowth = currentValue - monthValue;
+            const monthlyPercent = (monthlyGrowth / monthValue) * 100;
+            updateGrowthCard('monthly', monthlyGrowth, monthlyPercent);
+        }
+    } else {
+        hideGrowthCard('monthly', 30 - daysSincePurchase);
     }
 
-    // Yearly growth
-    const yearData = historicalData.find(d => d.label === 'lastYear');
-    if (yearData) {
-        const yearValue = yearData.price * INVESTMENT.weight;
-        const yearlyGrowth = currentValue - yearValue;
-        const yearlyPercent = (yearlyGrowth / yearValue) * 100;
-        updateGrowthCard('yearly', yearlyGrowth, yearlyPercent);
+    // Yearly growth - only if at least 365 days since purchase
+    if (daysSincePurchase >= 365) {
+        const yearData = historicalData.find(d => d.label === 'lastYear');
+        if (yearData) {
+            const yearValue = yearData.price * INVESTMENT.weight;
+            const yearlyGrowth = currentValue - yearValue;
+            const yearlyPercent = (yearlyGrowth / yearValue) * 100;
+            updateGrowthCard('yearly', yearlyGrowth, yearlyPercent);
+        }
+    } else {
+        hideGrowthCard('yearly', 365 - daysSincePurchase);
     }
 }
 
 function updateGrowthCard(period, growth, percent) {
     const valueEl = document.getElementById(`${period}-growth`);
     const percentEl = document.getElementById(`${period}-percent`);
+    const card = valueEl?.closest('.growth-card');
 
     if (valueEl && percentEl) {
+        card?.classList.remove('unavailable');
         const sign = growth >= 0 ? '+' : '';
         valueEl.textContent = `${sign}${formatCurrency(growth)}`;
         percentEl.textContent = `${sign}${percent.toFixed(2)}%`;
         percentEl.className = `growth-percent ${growth >= 0 ? 'positive' : 'negative'}`;
+    }
+}
+
+function hideGrowthCard(period, daysRemaining) {
+    const valueEl = document.getElementById(`${period}-growth`);
+    const percentEl = document.getElementById(`${period}-percent`);
+    const card = valueEl?.closest('.growth-card');
+
+    if (valueEl && percentEl) {
+        card?.classList.add('unavailable');
+        valueEl.textContent = `in ${daysRemaining} days`;
+        percentEl.textContent = '';
+        percentEl.className = 'growth-percent';
     }
 }
 
